@@ -8,7 +8,7 @@ class UserContextProvider extends React.Component {
         username: "Diamond Trust Bank Limited"
     }
 
-    upadteUsername = (inputData) => {
+    updateUsername = (inputData) => {
         this.setState(
             {username: inputData}
         )
@@ -16,7 +16,14 @@ class UserContextProvider extends React.Component {
 
     render() {
         return (
-            <Provider value={{username: this.state.username,upadteUsername: this.upadteUsername}}>
+            <Provider 
+                value={
+                        {
+                            username: this.state.username,
+                            updateUsername: this.updateUsername
+                        }
+                      }
+            >
                 {this.props.children}
             </Provider>
         )
