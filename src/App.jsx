@@ -21,7 +21,7 @@ class App extends React.Component {
     return (
       <div className='container'>
         <UserContextConsumer>
-          {({ username, upadteUsername }) => <Header username={username} />}
+          {({ username, updateUsername }) => <Header username={username} />}
         </UserContextConsumer>
 
         <main className="main--container">
@@ -33,10 +33,10 @@ class App extends React.Component {
             onChange={this.handleChange}
           />
           <UserContextConsumer>
-            {({ username, upadteUsername }) => (
+            {({username, updateUsername }) => (
               <button
                 className="update--name--btn"
-                onClick={() => { upadteUsername(this.state.inputData) }}
+                onClick={() => { updateUsername(this.state.inputData) }}
               >Update name</button>
             )}
           </UserContextConsumer>
